@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Table</title>
+</head>
+<body>
+	<table border="true">
+		<thead>
+			<tr style="background: #8f66668d;">
+			  <th>NO</th>
+			  <th>NAMA</th>
+			  <th>NILAI</th>
+			  <th>KETERANGAN</th>
+			  <th>GRADE</th>
+			  <th>PREDIKAT</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+		<tfoot>
+			<tr style="background: #8f66668d;">
+				<th colspan="6" align="center"></th>
+			</tr>
+		</tfoot>
+	 </table>
+
+	 <script>
+
+		let el = ''
+		
+		const data = 
+		[
+			{nama:'Achmad Alvin Ardiansyah', nilai: 100},
+			{nama:'Joko Widodo', nilai: 90},
+			{nama:'Prabowo Subianto', nilai: 83},
+			{nama:'Anies Baswedan', nilai: 76},
+			{nama:'Ganjar Pranowo', nilai: 71},
+			{nama:'Mahfud MD', nilai: 57},
+			{nama:'Gibran Rakabuming Raka', nilai: 43},
+			{nama:'Megawati', nilai: 25},
+			{nama:'Muhaimin Iskandar', nilai: '-'},
+		]
+
+		let i = 1
+		for(siswa of data){
+			let keterangan = siswa.nilai >= 60 ? 'lulus' : 'gagal'
+			let grade = ''
+			let predikat = ''
+
+			if(siswa.nilai > 85 && siswa.nilai <= 100) grade = "A"
+			else if (siswa.nilai > 75 && siswa.nilai <= 85) grade = "B"
+			else if (siswa.nilai >= 60 && siswa.nilai <= 75) grade = "C"
+			else if (siswa.nilai > 30 && siswa.nilai < 60) grade = "D"
+			else if (siswa.nilai >= 0 && siswa.nilai <= 30) grade = "E"
+			else grade = '-'
+
+			if(grade == 'A') predikat = 'Sempurna'
+			else if(grade == 'B') predikat = 'Baik'
+			else if(grade == 'C') predikat = 'Cukup'
+			else if(grade == 'D') predikat = 'Kurang'
+			else if(grade == 'E') predikat = 'Buruk'
+			else predikat = '-'
+
+			el = el +
+			`
+			<tr>
+				<td id="no"align="center">${i}</td>
+				<td id="nama"align="center">${siswa.nama}</td>
+				<td id="nilai"align="center">${siswa.nilai}</td>
+				<td id="keterangan"align="center">${keterangan}</td>
+				<td id="grade"align="center">${grade}</td>
+				<td id="predikat"align="center">${predikat}</td>
+			</tr>
+			`
+			i++
+		}
+		document.getElementsByTagName('tbody')[0].innerHTML = el
+	 </script>
+</body>
+</html>
