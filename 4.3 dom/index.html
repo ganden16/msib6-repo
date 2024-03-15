@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM</title>
+	</head>
+	<body>
+		<form action="">
+			<div>
+				<label for="nama">Nama</label>
+				<input type="text" id="input" name="nama" />
+			</div>
+			<br />
+			<div>
+				<label for="nama">Pekerjaan</label>
+				<input type="text" id="input" name="pekerjaan" />
+			</div>
+			<br />
+			<div>
+				<label for="nama">Hobi</label>
+				<input type="text" id="input" name="hobi" />
+			</div>
+			<br />
+		</form>
+		<button onclick="salam()">salam</button>
+		<br />
+
+		<h1 id="salam"></h1>
+
+		<script>
+			function salam() {
+				let nama = document.querySelector('input[name="nama"]').value;
+				let pekerjaan = document.querySelector('input[name="pekerjaan"]').value;
+				let hobi = document.querySelector('input[name="hobi"]').value;
+				let salam = document.querySelector('#salam');
+
+				if (nama == '' || pekerjaan == '' || hobi == '') {
+					alert('isi semua input!');
+					return;
+				}
+				salam.innerHTML = 'Halo nama saya ' + nama + ', saya sebagai ' + pekerjaan + ', hobi saya adalah ' + hobi;
+			}
+		</script>
+	</body>
+</html>
+
