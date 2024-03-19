@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Input</title>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	</head>
+	<body>
+		<center>
+			<form action="">
+				<div>
+					<label for="nama">Nama</label>
+					<input type="text" id="inputNama" name="nama" style="width: 20%" />
+				</div>
+				<br />
+				<div>
+					<label for="nama">Jabatan</label>
+					<select name="jabatan" id="inputJabatan" style="width: 20%">
+						<option value="manager">Manager</option>
+						<option value="asisten manager">Asisten Manager</option>
+						<option value="staff">Staff</option>
+					</select>
+				</div>
+				<br />
+				<div>
+					<label for="nama">Status</label>
+					<select name="status" id="inputStatus" style="width: 20%">
+						<option value="menikah">Menikah</option>
+						<option value="belum menikah">Belum Menikah</option>
+					</select>
+				</div>
+				<br />
+			</form>
+			<button onclick="simpan()">simpan</button>
+		</center>
+		<br />
+		
+
+		<script src="script.js" />
+	</body>
+</html>
+
